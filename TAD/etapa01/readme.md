@@ -1,7 +1,7 @@
-# TAD
+# TAD - O que?
 
 ## Dados
-
+Uma lista de números inteiros. 
 
 ```c++
 typedef struct ListaSeq;
@@ -19,15 +19,19 @@ typedef struct ListaSeq;
 - Insere um elemento no final da lista
 - Insere um elemento em qualquer posição da lista
 - Substitui um elemento da lista
-- Remover um elemento
--  
+- Remove um elemento de uma posição da lista
+- Remove um elemento da lista
+  
 
 **Funcionalidades de consulta**
 
 - Imprime o conteúdo da lista
 - Obtém a quantidade de elementos da lista
-- Obtém a posição do elemento na lista
-- Obtém um elemento que ocupa uma posição da lista
-- 
+- Obtém a posição de um elemento na lista
+- Obtém o elemento que ocupa uma posição da lista
+
+**Funcionalidades Extra**
+- Devolver o conteúdo da lista na forma de string
+
 
   
