@@ -1,9 +1,9 @@
-#include "listaSeq.c"
+#include "lista.h"
 
 int main() {
 
 int i;
-ListaSeq* l1 = lista_criar();
+Lista* l1 = lista_criar();
 
 lista_anexar(1, l1);  // [1]
 lista_anexar(2, l1);  // [1,2]
