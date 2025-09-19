@@ -1,49 +1,28 @@
-# Compiladores e arquivos binários
-*.exe
-*.out
-*.o
-*.obj
-*.so
-*.dll
-*.a
-*.lib
-*.dylib
-
-# Arquivos de build
-build/
-cmake-build-*/
-CMakeFiles/
-CMakeCache.txt
-Makefile
-makefile
-*.make
-*.moc
-*.qrc
-*.user
-*.ncb
-*.sdf
-*.opensdf
-*.vcxproj*
-*.sln
-*.idb
-*.pdb
-*.ipch
-*.aps
-*.pch
-*.log
-*.tlog
-*.obj
-*.lst
-*.map
-*.dep
+# Prerequisites
 *.d
 
-# Arquivos temporários e de sistema
-*~
-*.swp
-*.tmp
-*.DS_Store
-Thumbs.db
-.vscode/
-.idea/
-.vs/
+# Compiled Object files
+*.slo
+*.lo
+*.o
+*.obj
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Compiled Dynamic libraries
+*.so
+*.dylib
+*.dll
+
+# Compiled Static libraries
+*.lai
+*.la
+*.a
+*.lib
+
+# Executables
+*.exe
+*.out
+*.app
