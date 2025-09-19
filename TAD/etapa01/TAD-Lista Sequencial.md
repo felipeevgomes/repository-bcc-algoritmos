@@ -1,15 +1,4 @@
-# Introdução: O que é um Tipo Abstrato de Dados (TAD)?
-
-Um Tipo Abstrato de Dados (TAD) é um modelo matemático que define um conjunto de dados e as operações fundamentais que podem ser realizadas sobre eles, sem especificar detalhes de implementação. O objetivo principal de um TAD é separar a interface (o que pode ser feito) da implementação (como é feito), promovendo modularidade, reutilização e facilidade de manutenção do código.
-
-Ao trabalhar com TADs, o programador pode manipular estruturas complexas, como listas, filas, pilhas e árvores, utilizando apenas as operações definidas, sem se preocupar com os detalhes internos de armazenamento ou manipulação dos dados. Isso permite que diferentes implementações possam ser trocadas ou otimizadas sem impactar o restante do sistema, desde que a interface permaneça a mesma.
-
-No contexto deste projeto, o TAD estudado é uma lista de números inteiros, com operações para criação, inserção, remoção, substituição, consulta e impressão dos elementos. A implementação apresentada utiliza uma abordagem sequencial, baseada em vetor dinâmico, para armazenar os dados e gerenciar a capacidade da lista conforme necessário.
-
-# TAD Lista
-
-[Implementação do TAD com abordagem sequencial.](TAD-Lista%20Sequencial.md)
-
+# TAD - O que?
 
 ## Dados
 Uma lista de números inteiros. 
@@ -17,6 +6,7 @@ Uma lista de números inteiros.
 ```c++
 typedef struct ListaSeq;
 ```
+
 
 
 ## Operações
@@ -38,12 +28,12 @@ Lista* l1 = lista_criar();
 
 ```c++
 // Protótipo
-
+Lista* lista_criar();
 ```
 
 ```c++
 // Uso da Função
-
+Lista* l1 = lista_criar();
 ```
   
 ### **Funcionalidades de Modificação**
