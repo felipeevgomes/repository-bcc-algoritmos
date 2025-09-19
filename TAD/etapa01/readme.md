@@ -38,11 +38,16 @@ Lista* l1 = lista_criar();
 
 ```c++
 // Protótipo
-
+void lista_destruir(Lista* lista);
 ```
 
 ```c++
 // Uso da Função
+Lista* l1 = lista_criar();
+lista_anexar(10, l1);  // [10]
+lista_anexar(20, l1);  // [10, 20]
+
+lista_destruir(l1);
 
 ```
   
@@ -63,7 +68,7 @@ lista_anexar(20, l1);  // [10, 20]
 
 ```
 
-- [ ] Insere um elemento em qualquer posição da lista
+- [x] Insere um elemento em qualquer posição da lista
 
 ```c++
 // Protótipo
@@ -77,7 +82,7 @@ lista_inserir(10, 0, l1);  // [10]
 lista_inserir(20, 1, l1);  // [10, 20]
 lista_inserir(5, 0, l1);   // [5, 10, 20]
 lista_inserir(15, 2, l1);  // [5, 10, 15, 20]
-lista_print();
+lista_print(l1);
 ```
 
 - [ ] Substitui um elemento da lista
@@ -97,14 +102,36 @@ lista_anexar(30, l1);  // [10, 20, 30]
 lista_substituir(11, 0, l1);
 lista_substituir(21, 1, l1);
 lista_substituir(31, 2, l1); // [11, 21, 31]
-lista_print();
+lista_print(l1);
 ```
+
+- [x] Inicializar uma Lista já criada
+
+
+```c++
+// Protótipo
+bool lista_inicializar(Lista* lista);
+```  
+
+```c++
+// Uso da Função
+Lista l1;
+lista_inicializar(&l1);
+lista_anexar(10, &l1);  // [10]
+lista_anexar(20, &l1);  // [10, 20]
+lista_anexar(30, &l1);  // [10, 20, 30]
+
+lista_print(&l1);
+```
+
 
 - [ ] Remove um elemento de uma posição da lista
 
 ```c++
 // Protótipo
-bool lista_remover(int pos, Lista* lista);
+int lista_removerPorPosicao1(int pos, Lista* lista);
+
+bool lista_removerPorPosicao2(int pos, Lista* lista, int* endereco);
 ```
 
 ```c++
@@ -115,17 +142,28 @@ lista_anexar(20, l1);
 lista_anexar(30, l1);  
 lista_anexar(40, l1);  // [10, 20, 30, 40]
 
-lista_removerPorPosicao(1, l1);  // [10, 30, 40]
-lista_removerPorPosicao(2, l1);  // [10, 30]
-lista_removerPorPosicao(0, l1);  // [30]
-lista_removerPorPosicao(0, l1);  // []
+lista_removerPorPosicao1(1, l1);  // [10, 30, 40]
+lista_removerPorPosicao1(2, l1);  // [10, 30]
+lista_removerPorPosicao1(0, l1);  // [30]
+lista_removerPorPosicao1(0, l1);  // []
+
+lista_anexar(10, l1);  
+lista_anexar(20, l1);  
+lista_anexar(30, l1);  
+lista_anexar(40, l1);  // [10, 20, 30, 40]
+
+int removido;
+lista_removerPorPosicao2(1, l1, &removido);  // [10, 30, 40]
+lista_removerPorPosicao2(2, l1, &removido);  // [10, 30]
+lista_removerPorPosicao2(0, l1, &removido);  // [30]
+lista_removerPorPosicao2(0, l1, &removido);  // []
 ```
 
 - [ ] Remove um elemento da lista
 
 ```c++
 // Protótipo
-bool lista_remover(int pos, Lista* lista);
+bool lista_removerPorElemento(int pos, Lista* lista);
 ```
 
 ```c++
@@ -156,11 +194,17 @@ void lista_print(Lista* lista);
 
 ```c++
 // Protótipo
-
+int lista_tamanho(Lista* lista);
 ```
 
 ```c++
 // Uso da Função
+Lista* l1 = lista_criar();
+lista_anexar(10, l1);  
+lista_anexar(20, l1);  
+lista_anexar(30, l1);  // [10, 20, 30]
+
+printf("Tamanho: %d \n", lista_tamanho(l1)); // 3
 ```
 
 
@@ -168,11 +212,19 @@ void lista_print(Lista* lista);
 
 ```c++
 // Protótipo
-
+int lista_getPosicao(int elemento, Lista* lista);
 ```
 
 ```c++
 // Uso da Função
+Lista* l1 = lista_criar();
+lista_anexar(10, l1);  
+lista_anexar(20, l1);  
+lista_anexar(30, l1);  // [10, 20, 30]
+
+printf("Elemento [%d] - posicao [%d] \n", 10, lista_getPosicao(10, l1)); // 0
+printf("Elemento [%d] - posicao [%d] \n", 20, lista_getPosicao(20, l1)); // 1
+printf("Elemento [%d] - posicao [%d] \n", 30, lista_getPosicao(30, l1)); // 2
 ```
 
 - [ ] Obtém o elemento que ocupa uma posição da lista
@@ -189,7 +241,10 @@ lista_anexar(10, l1);
 lista_anexar(20, l1);  
 lista_anexar(30, l1);  // [10, 20, 30]
 
-int x = lista_elemento(1, l1); // 20
+printf("Posicao [%d] - elemento [%d] \n", 0, lista_getElemento(0, l1)); // 10
+printf("Posicao [%d] - elemento [%d] \n", 1, lista_getElemento(1, l1)); // 20
+printf("Posicao [%d] - elemento [%d] \n", 2, lista_getElemento(2, l1)); // 30
+
 ```
 
 ### **Funcionalidades Extra**
@@ -198,10 +253,19 @@ int x = lista_elemento(1, l1); // 20
 
 ```c++
 // Protótipo
+bool lista_toString(char* saida, Lista* lista);
 ```
 
 ```c++
 // Uso da Função
+Lista* l1 = lista_criar();
+lista_anexar(10, l1);  
+lista_anexar(20, l1);  
+lista_anexar(30, l1);  // [10, 20, 30]
+
+char texto[100];
+lista_toString(texto, l1);
+printf("%s \n", texto);
 
 ```
 

@@ -2,18 +2,18 @@
 
 int main() {
 
-int i;
 Lista* l1 = lista_criar();
+lista_inserir(10, 0, l1);  // [10]
+lista_inserir(20, 1, l1);  // [10, 20]
+lista_inserir(5, 0, l1);   // [5, 10, 20]
+lista_inserir(15, 2, l1);  // [5, 10, 15, 20]
+lista_print(l1);
 
-lista_anexar(1, l1);  // [1]
-lista_anexar(2, l1);  // [1,2]
-lista_anexar(3, l1);  // [1,2,3]
-lista_print(l1); 
-
-// inserir(50, 0, l1);  // [50,1,2,3]
-// inserir(100, 2, l1); // [50,1,100,2,3]
-// inserir(0, 5, l1); // [50,1,100,2,3]
-// print(l1); 
-
+Lista* l2 = lista_criar();
+lista_inserir(10, 0, l2);  // [10]
+lista_inserir(20, 1, l2);  // [10, 20]
+lista_inserir(5, 4, l2);   
+lista_inserir(15, -2, l2);  
+lista_print(l2);
 
 }
