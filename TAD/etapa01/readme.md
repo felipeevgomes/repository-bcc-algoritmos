@@ -163,7 +163,7 @@ lista_removerPorPosicao2(0, l1, &removido);  // []
 
 ```c++
 // Protótipo
-bool lista_removerPorElemento(int pos, Lista* lista);
+int lista_removerPorElemento(int elemento, Lista* lista);
 ```
 
 ```c++
